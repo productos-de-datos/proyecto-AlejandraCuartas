@@ -1,4 +1,4 @@
-    """Compute los precios promedios mensuales.
+"""Compute los precios promedios mensuales.
 
     Usando el archivo data_lake/cleansed/precios-horarios.csv, compute el prcio
     promedio mensual. Las

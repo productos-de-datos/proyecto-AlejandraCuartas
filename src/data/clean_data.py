@@ -1,5 +1,5 @@
 
-    """Realice la limpieza y transformación de los archivos CSV.
+"""Realice la limpieza y transformación de los archivos CSV.
 
     Usando los archivos data_lake/raw/*.csv, cree el archivo data_lake/cleansed/precios-horarios.csv.
     Las columnas de este archivo son:
