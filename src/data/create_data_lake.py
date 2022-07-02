@@ -1,5 +1,5 @@
 
-    """Cree el data lake con sus capas.
+"""Cree el data lake con sus capas.
 
     Esta función debe crear la carpeta `data_lake` en la raiz del proyecto. El data lake contiene
     las siguientes subcarpetas:
