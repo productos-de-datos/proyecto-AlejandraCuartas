@@ -2,11 +2,7 @@
 Módulo de ingestión de datos.
 -------------------------------------------------------------------------------
 
-"""
-
-
-
-    """Ingeste los datos externos a la capa landing del data lake.
+Ingeste los datos externos a la capa landing del data lake.
 
     Del repositorio jdvelasq/datalabs/precio_bolsa_nacional/xls/ descarge los
     archivos de precios de bolsa nacional en formato xls a la capa landing. La
