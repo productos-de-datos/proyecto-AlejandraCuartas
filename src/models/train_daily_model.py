@@ -18,22 +18,15 @@ def train_daily_model():
 
     df = df.drop(columns=["fecha"])
 
-'''Se realiza la partición de los datos'''
-
     y = df["precio"].array
     X = df.drop(columns=["precio"])
-    
-    X_train, X_Rem, y_true_train, y_Rem = train_test_split(X, y, test_size=0.25, random_state=123)
-
-''' Los datos se parten en muestra para testeo y validación'''
-
+        X_train, X_Rem, y_true_train, y_Rem = train_test_split(X, y, test_size=0.25, random_state=123)
     X_valid, X_test, y_valid, y_true_test = train_test_split(X_Rem,
                                                          y_Rem,
-                                                         test_size=0.5
-                                                         ,random_state=603)
+                                                         test_size=0.3
+                                                         ,random_state=123)
 
 
-'''GridSearchCV'''
     X_test["y"] = y_true_test 
     X_test.to_csv('src/models/datosforecast.csv')
     model = MLPRegressor(max_iter= 150,
