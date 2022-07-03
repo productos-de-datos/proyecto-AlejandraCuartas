@@ -8,7 +8,7 @@
     """
 import pandas as pd
 import matplotlib.pyplot as plt
-def make_daily_prices_plot():
+def make_monthly_prices_plot():
 
     df_monthly_prices = pd.read_csv("./data_lake/business/precios-mensuales.csv")
     plt.plot(df_monthly_prices["fecha"], df_monthly_prices["precio"])
