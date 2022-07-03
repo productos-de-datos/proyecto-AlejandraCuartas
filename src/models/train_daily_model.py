@@ -23,12 +23,12 @@ def train_daily_model():
     X_train, X_Rem, y_true_train, y_Rem = train_test_split(X, y, test_size=0.25, random_state=123)
     X_valid, X_test, y_valid, y_true_test = train_test_split(X_Rem,
                                                          y_Rem,
-                                                         test_size=0.3
+                                                         test_size=0.5
                                                          ,random_state=123)
 
     X_test["y"] = y_true_test 
     X_test.to_csv('src/models/datosforecast.csv')
-    model = MLPRegressor(max_iter= 150,
+    model = MLPRegressor(max_iter= 100,
         activation='relu', 
         solver= 'sgd', 
         learning_rate_init= 0.001) 

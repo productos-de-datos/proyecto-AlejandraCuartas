@@ -28,7 +28,7 @@ def make_forecasts():
     data_result = model.predict(df_feature_train)
     df_feature_train["precio_promedio_pronostico"] = data_result
     df_feature_train = df_feature_train.drop(columns = ['tipo_dia', 'fin_semana'])
-    df_feature_train["fecha"] = df_feature_train.apply(lambda x : str(math.floor(x.anio)) + "-" + str(add_digit(x.mes)) + "-" + str(add_digit(x.dia)), axis=1)  
+    df_feature_train["fecha"] = df_feature_train.apply(lambda x : str(math.floor(x.anio)) + "-" + str(add_digit(x.mes)) + "-" + str(add_digit(x.dia_mes)), axis=1)  
     df_feature_train = df_feature_train.drop(columns = ['anio','mes', 'dia_mes'])
     df_feature_train["precio_promedio_real"] = df_prices["y"]
     df_feature_train = df_feature_train[["fecha", "precio_promedio_real", "precio_promedio_pronostico"]]
