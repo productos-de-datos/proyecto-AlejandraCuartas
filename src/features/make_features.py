@@ -18,7 +18,7 @@ def make_features():
 
     """
     datos = pd.read_csv("./data_lake/business/precios-diarios.csv")
-    datos["fecha"] = pd.to_datetime(df["fecha"])
+    datos["fecha"] = pd.to_datetime(datos["fecha"])
     datos["anio"] = datos["fecha"].dt.year
     datos["mes"] = datos["fecha"].dt.month
     datos["dia_mes"] = datos["fecha"].dt.day
