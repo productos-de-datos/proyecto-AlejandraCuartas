@@ -23,7 +23,7 @@ def make_features():
     datos["mes"] = datos["fecha"].dt.month
     datos["dia_mes"] = datos["fecha"].dt.day
     datos["tipo_dia"] = datos["fecha"].dt.weekday
-    datos["fin_semana"] = (datos['tipo_dia']>=5).astype(int)
+    datos["fin_semana"] = (datos["tipo_dia"]>=5).astype(int)
 
     datos.to_csv("./data_lake/business/features/precios_diarios.csv", index=False)
 

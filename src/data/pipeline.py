@@ -85,7 +85,7 @@ def pipeline():
     """
     Orquesta y ejecuta el pipeline
     """
-    luigi.build([createstructure(), ingestdata(), transformdata(), cleandata(), computedailyPrices(),
+    luigi.build([createstructure(), ingestdata(), transformdata(), cleandata(), computedailyprices(),
     computemonthlyprices() ],  local_scheduler=True)
 
 if __name__ == "__main__":

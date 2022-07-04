@@ -4,7 +4,7 @@ Crea grafico de lineas que representa los precios promedios diarios.
 import pandas as pd
 import matplotlib.pyplot as plt
 def make_daily_prices_plot():
-"""Crea un grafico de lines que representa los precios promedios diarios.
+    """Crea un grafico de lines que representa los precios promedios diarios.
 
     Usando el archivo data_lake/business/precios-diarios.csv, crea un grafico de
     lines que representa los precios promedios diarios.
