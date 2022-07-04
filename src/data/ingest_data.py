@@ -20,7 +20,7 @@ def ingest_data():
     if os.path.isdir(parent_dir) and os.path.isdir(parent_dir+"/landing" ):
         os.chdir(parent_dir + "/landing")
         for year in range(1995,2022):
-        url=
+            url=
             'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'
                 if year not in (2016, 2017):
                     url= url + str(year)+'.xlsx?raw=true'
