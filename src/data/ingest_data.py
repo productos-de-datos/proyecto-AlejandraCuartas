@@ -16,18 +16,18 @@ def ingest_data():
 
     """
     parent_dir = "data_lake"
+    link='https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'
 
     if os.path.isdir(parent_dir) and os.path.isdir(parent_dir+"/landing" ):
         os.chdir(parent_dir + "/landing")
         for year in range(1995,2022):
-            url=
-            'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'
-                if year not in (2016, 2017):
-                    url= url + str(year)+'.xlsx?raw=true'
-                    urllib.request.urlretrieve(url, str(year) + ".xlsx")
-                else :
-                    url = url + str(year)+'.xls?raw=true'
-                    urllib.request.urlretrieve(url, str(year) + ".xls")
+            url=link
+            if year not in (2016, 2017):
+                url= url + str(year)+'.xlsx?raw=true'
+                urllib.request.urlretrieve(url, str(year) + ".xlsx")
+            else :
+                url = url + str(year)+'.xls?raw=true'
+                urllib.request.urlretrieve(url, str(year) + ".xls")
     else:
         print("There is not landing directory")
 
