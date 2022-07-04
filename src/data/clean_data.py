@@ -1,5 +1,4 @@
-""" Limpia y transforma los archivos para consolidarlos y posteriormente precesarlos
-    Debe ser ejecutado ya sea desde el directorio actual o desde la raiz del proyecto
+""" Limpia y transforma los archivos para consolidarlos y finalmente procesarlos
 """
 import pandas as pd
 def clean_data():
@@ -24,9 +23,9 @@ def clean_data():
         datos= pd.read_csv("../../data_lake/raw/1995.csv")
 
     datos = datos.rename(columns=horas)
-    datos = pd.melt(datos, id_vars= ["Fecha"], value_vars = [str(hour) if hour >=10  
+    datos = pd.melt(datos, id_vars= ["Fecha"], value_vars = [str(hour) if hour >=10
     else '0'+ str(hour) for hour in range(0,24)])
-    
+
     for i in range(1996,2022):
         route_try = True
         try:
@@ -35,12 +34,13 @@ def clean_data():
             route_try = False
             datos1 = pd.read_csv("../../data_lake/raw/" + str(i) + ".csv")
         datos1 = datos1.rename(columns=horas)
-        datos1 = pd.melt(datos1, id_vars= ["Fecha"], value_vars = [str(hour) if hour >=10  
+        datos1 = pd.melt(datos1, id_vars= ["Fecha"], value_vars = [str(hour) if hour >=10
         else '0'+ str(hour) for hour in range(0,24)])
         datos = pd.concat([datos,datos1])
 
     datos =  datos.rename(columns={"Fecha": "fecha", "variable": "hora", "value": "precio"})
-    route = "./data_lake/cleansed/precios-horarios.csv" if route_try else "../../data_lake/cleansed/precios-horarios.csv"
+    route = "./data_lake/cleansed/precios-horarios.csv" if route_try 
+            else "../../data_lake/cleansed/precios-horarios.csv"
     datos.to_csv(route, index=False)
 
 if __name__ == "__main__":

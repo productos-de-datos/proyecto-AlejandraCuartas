@@ -1,6 +1,5 @@
 """
 Este modulo crea la estructura necesaria para el proyecto.
-Debe ser ejecutado ya sea desde el directorio actual o desde la raiz del proyecto
 """
 import os
 def create_data_lake():

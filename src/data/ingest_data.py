@@ -1,11 +1,10 @@
 """
 Módulo de ingestión de datos desde repositorio externo
-Debe ser ejecutado ya sea desde el directorio actual o desde la raiz del proyecto
 """
 import os
 import urllib.request
 
-def ingest_data():   
+def ingest_data():
     """
     Módulo de ingestión de datos.
     -------------------------------------------------------------------------------

@@ -6,8 +6,8 @@ import joblib
 from sklearn.neural_network import MLPRegressor
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
-
 import pandas as pd
+
 def train_daily_model():
     """Entrena el modelo de pronóstico de precios diarios.
 
@@ -22,7 +22,8 @@ def train_daily_model():
 
     y_target = datos["precio"].array
     x_vars = datos.drop(columns=["precio"])
-    x_train, x_rem, y_true_train, y_rem = train_test_split(x_vars, y_target, test_size=0.25, random_state=123)
+    x_train, x_rem, y_true_train, y_rem = train_test_split(x_vars, y_target, test_size=0.25,
+    random_state=123)
     x_validate, x_test, y_validate, y_true_test = train_test_split(x_rem,
                                                          y_rem,
                                                          test_size=0.5
