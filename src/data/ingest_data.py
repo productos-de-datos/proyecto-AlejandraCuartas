@@ -21,7 +21,7 @@ def ingest_data():
         os.chdir(parent_dir + "/landing")
         for year in range(1995,2022):
         url=
-        'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'
+            'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'
             if year not in (2016, 2017):
                 url= url + str(year)+'.xlsx?raw=true'
                 urllib.request.urlretrieve(url, str(year) + ".xlsx")
