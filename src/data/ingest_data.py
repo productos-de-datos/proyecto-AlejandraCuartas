@@ -20,13 +20,13 @@ def ingest_data():
     if os.path.isdir(parent_dir) and os.path.isdir(parent_dir+"/landing" ):
         os.chdir(parent_dir + "/landing")
         for year in range(1995,2022):
-            u='https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'
+            url='https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'
             if year not in (2016, 2017):
-                u = u + str(year)+'.xlsx?raw=true'
-                urllib.request.urlretrieve(u, str(year) + ".xlsx")
+                url= url + str(year)+'.xlsx?raw=true'
+                urllib.request.urlretrieve(url, str(year) + ".xlsx")
             else :
-                u = u + str(year)+'.xls?raw=true'
-                urllib.request.urlretrieve(u, str(year) + ".xls")
+                url = url + str(year)+'.xls?raw=true'
+                urllib.request.urlretrieve(url, str(year) + ".xls")
     else:
         print("There is not landing directory")
 

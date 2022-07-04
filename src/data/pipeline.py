@@ -20,7 +20,7 @@ from compute_daily_prices import compute_daily_prices
 from compute_monthly_prices import compute_monthly_prices
 
 
-class create_structure(luigi.Task):
+class CreateStructure(luigi.Task):
     """
     Crea la estructura
     """
@@ -30,7 +30,7 @@ class create_structure(luigi.Task):
     def run(self):
         create_data_lake()
 
-class ingest_data(luigi.Task):
+class IngestData(luigi.Task):
     """
     Recupera los datos desde un archivo externo
     """
@@ -40,7 +40,7 @@ class ingest_data(luigi.Task):
     def run(self):
         ingest_data()
 
-class transform_data(luigi.Task):
+class TransformData(luigi.Task):
     """
     Transforma los datos y los
     consolida en un unico archivo
@@ -51,7 +51,7 @@ class transform_data(luigi.Task):
     def run(self):
         transform_data()
 
-class clean_data(luigi.Task):
+class CleanData(luigi.Task):
     """
     La función limpia y estructura los datos
     """
@@ -61,7 +61,7 @@ class clean_data(luigi.Task):
     def run(self):
         clean_data()
 
-class compute_daily_prices(luigi.Task):
+class ComputeDailyPrices(luigi.Task):
     """
     Computa los precios por dia
     """
@@ -71,7 +71,7 @@ class compute_daily_prices(luigi.Task):
     def run(self):
         compute_daily_prices()
 
-class compute_monthly_prices(luigi.Task):
+class ComputeMonthlyPrices(luigi.Task):
     """
     Computa los precios por mes
     """
@@ -85,8 +85,8 @@ def pipeline():
     """
     Orquesta y ejecuta el pipeline
     """
-    luigi.build([create_structure(), ingest_data(), transform_data(), clean_data(),
-    compute_daily_prices(), compute_monthly_prices() ],  local_scheduler=True)
+    luigi.build([CreateStructure(), IngestData(), TransformData(), CleanData(),
+    ComputeDailyPrices(), ComputeMonthlyPrices() ],  local_scheduler=True)
 
 if __name__ == "__main__":
     import doctest

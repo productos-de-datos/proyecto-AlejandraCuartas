@@ -1,7 +1,7 @@
 """ Crea un achivo con los precios promedios consolidados por mes y año.
 """
 import pandas as pd
-def compute_monthly_prices():   
+def compute_monthly_prices():
     """Compute los precios promedios mensuales.
 
     Usando el archivo data_lake/cleansed/precios-horarios.csv, compute el prcio
