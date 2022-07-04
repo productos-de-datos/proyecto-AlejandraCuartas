@@ -26,8 +26,7 @@ def compute_monthly_prices():
     datos = datos[['year-month','precio']]
     datos = datos.rename(columns= {'year-month': 'fecha'})
     datos["fecha"] =  datos["fecha"].map(lambda x: x + str("-01"))
-    route = "./data_lake/business/precios-mensuales.csv" if route_try 
-    else "../../data_lake/business/precios-mensuales.csv"
+    route = "./data_lake/business/precios-mensuales.csv" if route_try else "../../data_lake/business/precios-mensuales.csv"
     datos.to_csv(route, index=False)
 
 if __name__ == "__main__":
