@@ -1,5 +1,9 @@
-
-"""Compute los precios promedios diarios.
+""" Crea un achivo con los precios promedios consolidados por dia.
+    Debe ser ejecutado ya sea desde el directorio actual o desde la raiz del proyecto
+"""
+import pandas as pd
+def compute_daily_prices():
+    """Compute los precios promedios diarios.
 
     Usando el archivo data_lake/cleansed/precios-horarios.csv, compute el prcio
     promedio diario (sobre las 24 horas del dia) para cada uno de los dias. Las
@@ -9,23 +13,18 @@
 
     * precio: precio promedio diario de la electricidad en la bolsa nacional
 
-
-
     """
-import pandas as pd
-def compute_daily_prices():
-
-    routeTry = True
+    route_try = True
     try:
-        df = pd.read_csv("./data_lake/cleansed/precios-horarios.csv")
-    except:
-        routeTry = False
-        df= pd.read_csv("../../data_lake/cleansed/precios-horarios.csv")
-    df= df.groupby('fecha', as_index=False).mean()
-    df= df[['fecha','precio']]
-    route = "./data_lake/business/precios-diarios.csv" if routeTry else "../../data_lake/business/precios-diarios.csv"
-    df.to_csv(route, index=False)
-    print(df.head())
+        datos = pd.read_csv("./data_lake/cleansed/precios-horarios.csv")
+    except FileNotFoundError:
+        route_try = False
+        datos= pd.read_csv("../../data_lake/cleansed/precios-horarios.csv")
+    datos= datos.groupby('fecha', as_index=False).mean()
+    datos= datos[['fecha','precio']]
+    route = "./data_lake/business/precios-diarios.csv" if route_try 
+    else "../../data_lake/business/precios-diarios.csv"
+    datos.to_csv(route, index=False)
 
 if __name__ == "__main__":
     import doctest

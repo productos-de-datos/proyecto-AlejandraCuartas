@@ -1,5 +1,10 @@
-
-"""Cree el data lake con sus capas.
+"""
+Este modulo crea la estructura necesaria para el proyecto.
+Debe ser ejecutado ya sea desde el directorio actual o desde la raiz del proyecto
+"""
+import os
+def create_data_lake():
+    """Cree el data lake con sus capas.
 
     Esta función debe crear la carpeta `data_lake` en la raiz del proyecto. El data lake contiene
     las siguientes subcarpetas:
@@ -7,11 +12,11 @@
     ```
     .
     |
-    \___ data_lake/
+    |___ data_lake/
          |___ landing/
          |___ raw/
          |___ cleansed/
-         \___ business/
+         |___ business/
               |___ reports/
               |    |___ figures/
               |___ features/
@@ -21,9 +26,6 @@
 
 
     """
-import os
-def create_data_lake():
-
     parent_dir = "data_lake"
     cwd = os.getcwd()
     path_data_lake = os.path.join(cwd, parent_dir)
