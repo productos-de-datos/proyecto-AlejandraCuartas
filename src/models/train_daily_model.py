@@ -24,12 +24,6 @@ def train_daily_model():
     x_vars = data_to_train.drop(columns=["precio"])
     x_train, x_test, y_true_train, y_true_test= train_test_split(x_vars, y_target, test_size=0.25,
     random_state=123)
-    '''
-    x_validate, x_test, y_validate, y_true_test = train_test_split(x_rem,
-                                                         y_rem,
-                                                         test_size=0.5
-                                                         ,random_state=123)
-    '''
 
     x_test["y"] = y_true_test
     x_test.to_csv('src/models/datosforecast.csv')
