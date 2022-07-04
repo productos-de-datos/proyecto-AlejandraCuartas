@@ -21,7 +21,7 @@ def compute_daily_prices():
         datos= pd.read_csv("../../data_lake/cleansed/precios-horarios.csv")
     datos= datos.groupby('fecha', as_index=False).mean()
     datos= datos[['fecha','precio']]
-    route = ("./data_lake/business/precios-diarios.csv" if route_try 
+    route = ("./data_lake/business/precios-diarios.csv" if route_try
             else "../../data_lake/business/precios-diarios.csv")
     datos.to_csv(route, index=False)
 
