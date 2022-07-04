@@ -45,7 +45,7 @@ def train_daily_model():
     grid_search = GridSearchCV(estimator = model,
                           param_grid=param_grid, cv=5)
 
-    data_to_train = grid_search.fit(X_train, y_true_train)
+    data_to_train = grid_search.fit(x_train, y_true_train)
 
     parent_dir = "src/models"
     cwd = os.getcwd()
