@@ -39,8 +39,8 @@ def clean_data():
         datos = pd.concat([datos,datos1])
 
     datos =  datos.rename(columns={"Fecha": "fecha", "variable": "hora", "value": "precio"})
-    route = "./data_lake/cleansed/precios-horarios.csv" if route_try 
-            else "../../data_lake/cleansed/precios-horarios.csv"
+    route = ("./data_lake/cleansed/precios-horarios.csv" if route_try 
+            else "../../data_lake/cleansed/precios-horarios.csv")
     datos.to_csv(route, index=False)
 
 if __name__ == "__main__":
