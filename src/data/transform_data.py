@@ -40,11 +40,10 @@ def transform_data():
             read_file = read_file.drop(columns=['Version'])
         if 'Unnamed: 26' in read_file.columns:
             read_file = read_file.drop(columns=['Unnamed: 26'])
-        route = "./data_lake/raw/" if routeTry else "../../data_lake/raw/"
+        route = "./data_lake/raw/" if route_try else "../../data_lake/raw/"
         read_file.to_csv( route + str(year) + ".csv", index=False)
 
 if __name__ == "__main__":
     import doctest
     transform_data()
     doctest.testmod()
-    
